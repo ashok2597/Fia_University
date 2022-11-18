@@ -1,0 +1,7 @@
+.front-page-main {
+  > * {
+    + * {
+      margin-top: 1rem;
+    }
+  }
+}

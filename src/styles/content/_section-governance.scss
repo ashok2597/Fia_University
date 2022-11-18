@@ -1,0 +1,100 @@
+.section-governance {
+  .container {
+    background-color: color('navy');
+    color: white;
+    padding: 4.8rem;
+    // padding-top: 6.4rem;
+    // padding-bottom: 6.4rem;
+    // display: flex;
+    // .section__header {
+    //   p {
+    //     color: color('navy');
+    //   }
+    // }
+  }
+  .section-governance__content {
+    > * {
+      margin-top: 1em;
+      // + * {
+      // }
+    }
+    h3 {
+      font-family: font(ui);
+      font-weight: 500;
+      font-size: 3.2rem;
+    }
+  }
+
+  .section-governance__content-list {
+    position: relative;
+    margin: 0;
+    margin-top: 2.4rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    li {
+      position: relative;
+      // opacity: .5;
+      display: flex;
+      width: 100%;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+      }
+      > div {
+        padding: 1.6rem;
+        padding-right: 3.2rem;
+        background: color('white', .10);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        > * {
+          + * {
+            margin-top: 1.6rem;
+          }
+        }
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      margin-right: 2.4rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    .caption {
+      background: white;
+      color: color('navy');
+      padding: .4rem .8rem;
+      font-family: font('heading');
+      text-transform: uppercase;
+      display: inline-block;
+    }
+    h4 {
+      // width: 50%;
+      font-family: font('ui');
+      font-weight: 500;
+      font-size: 3.2rem;
+    }
+    // figure {
+    //   width: 100%;
+    //   background-repeat: no-repeat;
+    //   background-size: cover;
+    //   background-position: center;
+    //   &:after {
+    //     content: "";
+    //     display: block;
+    //     padding-bottom: 100%;
+    //   }
+    // }
+    // figcaption {
+    //   padding: .8rem;
+    // }
+  }
+}

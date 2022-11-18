@@ -1,0 +1,51 @@
+:root {
+  font-family: font(ui);
+}
+
+body {
+  line-height: 1.38;
+  font-size: 1.6rem;
+  @media #{$desktop} {
+    font-size: 1.8rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+p,
+strong , b , em , i {
+  margin-top: 0;
+	margin-bottom: 0;
+	color: inherit;
+	-webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  // margin: 0; @fabio
+  font-family: font(heading);
+  // font-weight: 500;
+  font-weight: 300;
+  strong {
+    font-weight: 700;
+  }
+}
+
+h1 {
+  font-size: 5.4rem; 
+  // font-size: 3.2rem; 
+  line-height: 1.1;
+}
+h2 { 
+  font-size: 3.2rem; 
+  line-height: 1.25;
+}
+h3 { font-size: 2.4rem; }
+h4 , h5, h6 { 
+  font-size: inherit; 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

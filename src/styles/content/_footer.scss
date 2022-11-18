@@ -1,0 +1,47 @@
+.site-footer {
+// margin-top: -2rem;
+background-color: color('light');
+// color: white;
+
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 4.8rem size(lg);
+    align-items: flex-start;
+
+    font-size: 1.6rem;
+    > p {
+      flex: 0 0 auto;
+      align-self: flex-end;
+    }
+
+    .footer__logo {
+      flex: 1 1 50%;
+      svg {
+        width: 18rem;
+        height: auto;
+      }
+    }
+  }
+  .menu-footer-links-menu-container {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .footer__menu {
+
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: flex-end;
+    flex-direction: column;
+    > li {
+      &:hover, &:focus {
+        background-color: white;
+      }
+    }
+  }
+}

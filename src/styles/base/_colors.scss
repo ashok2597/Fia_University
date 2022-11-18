@@ -1,0 +1,181 @@
+$whitepointHsl: (0,0%,100%);
+$blackpointHsl: (212, 100%, 19%);
+
+$colors: (
+
+  'light': (
+    hsl: (0,0%,96%), 
+    contrast: $blackpointHsl,
+  ),
+
+  // // Primary colour
+  // 'gray': (
+  //   // hsl: (20,2%,35%), 
+  //   hsl: (60,1%,34%), 
+  //   contrast: $whitepointHsl,
+  // ),
+
+  // Foreground colour
+  'white': (
+    hsl: $whitepointHsl,
+    contrast: $blackpointHsl,
+  ),
+
+  // Background colour
+  'black': (
+    hsl: $blackpointHsl,
+    contrast: $whitepointHsl,
+  ),
+
+  'dark': (
+    hsl: $blackpointHsl,
+    contrast: $whitepointHsl,
+  ),
+
+  'navy': (
+    hsl: $blackpointHsl,
+    contrast: $whitepointHsl,
+  ),
+
+  'blue': (
+    hsl: $blackpointHsl,
+    contrast: $whitepointHsl,
+  ),
+
+  'purple': (
+    hsl: (274,30%,48%),
+    contrast: $whitepointHsl,
+  ),
+
+  'pink': (
+    hsl: (335,85%,54%),
+    contrast: $whitepointHsl,
+  ),
+
+  'yellow': (
+    hsl: (47,98%,51%),
+    contrast: $whitepointHsl,
+  ),
+
+
+);
+
+$contextColors: (
+
+  'alert': 'pink',
+  'attention': 'yellow',
+  'neutral': 'blue',
+  'positive': 'blue',
+
+  'foreground': $blackpointHsl,
+  'background': $whitepointHsl,
+  // primary: $blackpointHsl,
+  // secondary: $blackpointHsl,
+  // accent: $blackpointHsl
+  // secondary: green,
+  // tertiary: orange,
+  // quaternary: red,
+  // quintinary: yellow,
+
+);
+
+
+@function staticColor($colorName: a, $type: hsl, $alpha: 1, $lx: 0, $sx: null) {
+  $color: map-get($colors, $colorName);
+  $hsl: map-get($color, $type);
+  $lx: 1 + $lx;
+  @if $sx == null {
+    $sx: abs($lx);
+  }
+  @if ($lx == 0 and $sx == null) {
+    @if ($alpha == 1) {
+      @return hsl(nth($hsl,1),nth($hsl,2),nth($hsl,3));
+    } @else {
+      @return hsla(nth($hsl,1),nth($hsl,2),nth($hsl,3), $alpha);
+    }
+  } @else {
+    @return hsla(nth($hsl, 1),nth($hsl, 2)*$sx,nth($hsl, 3)*$lx, $alpha);   
+  }
+}
+@function getColor($colorName: a, $alpha: 1, $lx: 0, $sx: null) {
+  @if (map-get($colors, $colorName)) {
+    @return staticColor($colorName, hsl, $alpha, $lx, $sx);
+  }
+  $lx: 1 + $lx;
+  @if $sx == null {
+    $sx: abs($lx);
+  }
+  @if $lx == 1 {
+    @return unquote('hsla(') var(--#{$namespace}-c-#{$colorName}-hsl), $alpha unquote(')');
+  } @else {
+    @return hsla(
+      var(--#{$namespace}-c-#{$colorName}-h),
+      calc(var(--#{$namespace}-c-#{$colorName}-s)*#{$sx}),
+      calc(var(--#{$namespace}-c-#{$colorName}-l)*#{$lx}),
+      $alpha
+    );
+  }
+}
+@function color($colorName: a, $alpha: 1, $lx: 0, $sx: null) {
+  @return getColor($colorName, $alpha, $lx, $sx);
+}
+@function contrastColor($colorName: a, $alpha: 1, $lx: 0, $sx: null) {
+  @if (map-get($colors, $colorName)) {
+    @return staticColor($colorName, contrast, $alpha, $lx, $sx);
+  }
+  $lx: 1 + $lx;
+  @if $sx == null {
+    $sx: abs($lx);
+  }
+  @if $lx == 1 {
+    @return unquote('hsla(') var(--#{$namespace}-c-#{$colorName}_hsl), $alpha unquote(')');
+  } @else {
+    @return hsla(
+      var(--#{$namespace}-c-#{$colorName}_h),
+      calc(var(--#{$namespace}-c-#{$colorName}_s)*#{$sx}),
+      calc(var(--#{$namespace}-c-#{$colorName}_l)*#{$lx}),
+      $alpha
+    );
+  }
+}
+
+
+@mixin setContextColor($contextColorName, $colorName) {
+  --#{$namespace}-c-#{$contextColorName}-h: var(--#{$namespace}-c-#{$colorName}-h);
+  --#{$namespace}-c-#{$contextColorName}-s: var(--#{$namespace}-c-#{$colorName}-s);
+  --#{$namespace}-c-#{$contextColorName}-l: var(--#{$namespace}-c-#{$colorName}-l);
+  --#{$namespace}-c-#{$contextColorName}-hsl: var(--#{$namespace}-c-#{$colorName}-hsl);
+  --#{$namespace}-c-#{$contextColorName}_h: var(--#{$namespace}-c-#{$colorName}_h);
+  --#{$namespace}-c-#{$contextColorName}_s: var(--#{$namespace}-c-#{$colorName}_s);
+  --#{$namespace}-c-#{$contextColorName}_l: var(--#{$namespace}-c-#{$colorName}_l);
+  --#{$namespace}-c-#{$contextColorName}_hsl: var(--#{$namespace}-c-#{$colorName}_hsl);
+}
+
+@mixin setForegroundColor($colorName) {
+  @include setContextColor('foreground', $colorName);
+}
+@mixin setBackgroundColor($colorName) {
+  @include setContextColor('background', $colorName);
+}
+@mixin setPrimaryColor($colorName) {
+  @include setContextColor('primary', $colorName);
+}
+
+$thirdPartyColors: (
+  facebook: '67,105,176',
+  twitter: '43,162,239',
+  pinterest: '206,29,31',
+  instagram: '224,49,112',
+  youtube: '230,33,23',
+  linkedin: '0,132,191',
+  snap: '255,251,57',
+);
+
+@function thirdPartyColor($colorName, $opacity: 1) {
+  @if ($opacity == 1) {
+    @return unquote('rgb(#{map-get($thirdPartyColors, $colorName)})');
+  } @else {
+    @return unquote('rgba(#{map-get($thirdPartyColors, $colorName)}, #{$opacity})');
+  }
+}
+

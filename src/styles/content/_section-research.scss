@@ -1,0 +1,29 @@
+.section-research {
+
+  .container {
+    // background: white;
+    background: linear-gradient( 105deg, transparent 50%, color('navy') 50%);
+
+    padding: 4.8rem;
+  }
+  .swiper {
+    
+  }
+  .swiper-slide {
+    flex-direction: row-reverse;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .section__header {
+    p {
+      color: color('navy');
+    }
+  }
+  .banner__content {
+    padding-right: 0;
+    padding-left: 3.2rem;
+    h3 {
+      font-weight: 500;
+    }
+  }
+}

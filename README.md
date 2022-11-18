@@ -1,1 +1,1 @@
-# wp-fia-university
+# FIA University

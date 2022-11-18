@@ -1,0 +1,121 @@
+.section-contact {
+  .container {
+    background-color: color('navy');
+    background: radial-gradient(270.65% 372.36% at 3.58% -98.18%, #ED2678 0%, #002D5F 100%);
+    color: white;
+    padding: 4.8rem;
+    // padding-top: 6.4rem;
+    // padding-bottom: 6.4rem;
+    // display: flex;
+  }
+
+  .section__header {
+    p {
+      color: white;
+    }
+  }
+
+  .section-contact__content {
+    padding: 0 4.8rem;
+    margin-top: 4.8rem;
+    display: flex;
+    justify-content: center;
+    // align-items: flex-end;
+    align-items: center;
+    figure {
+      box-shadow: color('white') -.8rem .8rem;
+      border: 2px solid white;
+      flex: 0 0 20%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 133.33%;
+      }
+    }
+    article {
+      margin-left: 4.8rem;
+      p {
+        font-size: 3.2rem;
+      }
+      .button {
+        margin-top: 4.8rem;
+        color: color('white');
+        border-bottom-color: white;
+      }
+    }
+   
+  }
+
+  // .section-about__heading {
+  //   flex: 0 0 50%;
+  //   h2 {
+  //     font-family: font('sans');
+  //     font-weight: 500;
+  //     font-size: 5.4rem;
+  //   }
+  //   header {
+  //     overflow: hidden;
+  //     display: flex;
+  //     &:before {
+  //       content: "";
+  //       border-left: 4px solid color('yellow');
+  //       margin: -1em 1em;
+  //       transform: rotate(15deg);
+  //     }
+  //     p {
+  //       font-size: 2.4rem;
+  //       font-family: font('condensed');
+  //       font-weight: 500;
+  //       text-transform: uppercase;
+  //       // color: color('yellow')
+  //       color: white;
+  //       margin: 0;
+  //     }
+  //   }
+  // }
+
+  // .section-about__logos {
+  //   margin-top: 3.2rem;
+  //   display: flex;
+
+  //   a {
+  //     background-color: color('white', .25);
+  //     padding: .8rem;
+  //     margin-right: .8rem;
+  //     img {
+  //       height: 24px;
+  //       width: auto;
+  //     }
+  //     p {
+  //       margin: 0;
+  //       font-weight: 500;
+  //     }
+  //   }
+  // }
+
+  // .section-about__content {
+  //   margin: 0;
+  //   padding: 0;
+  //   flex: 0 0 50%;
+  //   list-style: none;
+  //   columns: 2;
+  //   column-gap: 4.8rem;
+  //   h3 {
+  //     font-family: font('ui');
+  //     font-weight: 500;
+  //   }
+  //   p {
+  //     margin: 0;
+  //   }
+  //   li {
+  //     break-inside: avoid;
+  //     &:first-of-type {
+  //       margin-bottom: 2.4rem;
+  //     }
+  //   }
+  // }
+}

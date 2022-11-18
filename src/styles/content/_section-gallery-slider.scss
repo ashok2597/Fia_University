@@ -1,0 +1,109 @@
+.section-gallery-slider {
+  .container {
+    // background-color: color('white');
+    // display: flex;
+  }
+  
+  .gallery-slider__wrapper {
+    background-color: color('white');
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+  }
+
+  .gallery-slider__content {
+    width: calc(66.66% - 0.5rem);
+    flex: 0 0 calc(66.66% - 0.5rem);
+    > * {
+      + * {
+        margin-top: 1em;
+      }
+    }
+  }
+  .gallery-slider__aside {
+    width: calc(33.33% - 0.5rem);
+    flex: 0 0 calc(33.33% - 0.5rem);
+  }
+
+  .swiper-slide {
+    // figure {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 75%;
+      }
+    // }
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .gallery-slider {
+    padding-bottom: calc(1em + 16px);
+    .swiper-pagination {
+      width: 100%;
+      bottom: 0;
+      line-height: 0;
+      // bottom: -1em;
+      .swiper-pagination-bullet {
+        margin: 0 4px;
+        background-color: color('dark', .5);
+        width: 16px;
+        height: 16px;
+        &.swiper-pagination-bullet-active {
+          background-color: color('dark');
+        }
+      }
+    }
+  }
+
+  .gallery-slider__aside {
+    background: white;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem;
+    }
+    figure {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      width: 100%;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 75%;
+      }
+    }
+  }
+
+}
+
+// .section-banner-slider,
+// .section-banner-header {
+//   figcaption {
+//     padding-top: var(--nav-height);
+//   }
+// }
+
+// .front-page-main {
+//   > * {
+//     margin-bottom: 1rem;
+//   }
+// }

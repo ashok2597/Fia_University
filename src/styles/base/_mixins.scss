@@ -1,0 +1,61 @@
+@mixin backdropBlur($color: background, $opacity: 0.9, $value: 1em, $fallbackOpacity: 1) {
+  background-color: color(#{$color},#{$fallbackOpacity});
+	.apple & {
+		background-color: color(#{$color},#{$opacity});
+		backdrop-filter: blur(#{$value});
+	}
+}
+
+@mixin outlinedText($width: .75px) {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: $width;
+  -webkit-text-stroke-color: currentColor;
+}
+@mixin resetOutlinedText() {
+  -webkit-text-fill-color: unset;
+  -webkit-text-stroke-width: unset;
+  -webkit-text-stroke-color: unset;
+}
+
+@mixin underlinedLink($color: currentColor, $underlineColor: primary) {
+  background-image: linear-gradient(to top, color(red, 0.5), color(red, 0.5));
+  background-image: linear-gradient(to top, color($underlineColor, 0.5), color($underlineColor, 0.5));
+  background-position: bottom;
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.1s ease;
+  @if ($color != currentColor) {
+    color: color($color);
+  }
+  &:hover {
+    background-image: linear-gradient(to top, color(red), color(red));
+    background-image: linear-gradient(to top, color($underlineColor), color($underlineColor));
+  }
+}
+
+
+@mixin simpleReveal($steps: 1, $stepDelay: 0) {
+  // transition: opacity .4s, transform .7s cubic-bezier(0.19, 1, 0.22, 1);
+  // @for $i from 1 through $steps {
+  //   &:nth-child(#{$i}) {
+  //     transition-delay: $stepDelay * ($i - 1);
+  //   }
+  // }
+  // &.invisible {
+  //   opacity: 0;
+  //   transform: translateY(20px);
+  // }
+  // &.visible {
+  //   opacity: 1;
+  //   transform: none;
+  // }
+}
+
+@mixin lineClamp($n: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;  
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

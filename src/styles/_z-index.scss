@@ -1,0 +1,21 @@
+$z-indexes: (
+  // '.pswp',
+  // '.search-form-screen',
+  '.nav',
+  '.fixed-tabs',
+);
+
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 10000 unquote('!important');
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+@each $layer in $z-indexes {
+  #{$layer} {
+    z-index: z($layer);
+  }
+}

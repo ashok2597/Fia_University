@@ -1,0 +1,113 @@
+$fonts: (
+
+  // sans: 300,500
+  sans: 'futura-pt, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif',
+
+  // condensed: 400,500
+  condensed: 'futura-pt-condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif',
+  // uncial: 'rieven-uncial, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif',
+  
+  // serif: 'Reforma1918, serif',
+  // serif: '"Reforma1918", serif',
+
+  // monospace: 'Menlo, Monaco, Consolas, "Courier New", monospace',
+  // arabic: 'ibm-plex-arabic, sans-serif', // weights 400 and 800
+);
+
+
+// Example of @font-face loading below
+
+// @font-face {
+//   font-family: "AvenirNext";
+//   src: url("/wp-content/themes/wp-vetspecialists/assets/fonts/AvenirNext/AvenirNext-Regular.woff2") format("woff2"), url("/wp-content/themes/wp-vetspecialists/assets/fonts/AvenierNext/AvenirNext-Regular.woff")
+//     format("woff");
+//   font-weight: 400;
+// }
+
+// @font-face {
+//   font-family: "AvenirNext";
+//   src: url("/wp-content/themes/wp-vetspecialists/assets/fonts/AvenirNext/AvenirNext-DemiBold.woff2") format("woff2"), url("/wp-content/themes/wp-vetspecialists/assets/fonts/AvenierNext/AvenirNext-DemiBold.woff")
+//     format("woff");
+//   font-weight: 600;
+// }
+
+// @font-face {
+//   font-family: "AvenirNext";
+//   src: url("/wp-content/themes/wp-vetspecialists/assets/fonts/AvenirNext/AvenirNext-Bold.woff2") format("woff2"), url("/wp-content/themes/wp-vetspecialists/assets/fonts/AvenierNext/AvenirNext-Bold.woff")
+//     format("woff");
+//   font-weight: 700;
+// }
+
+
+
+$contextFonts: (
+  ui: condensed,
+  heading: sans,
+  // article: sans,
+  // arabic: arabic,
+);
+
+@function getFont($name) {
+  @return var(--#{$namespace}-f-#{$name});
+};
+@function font($name) {
+  @return getFont($name);
+}
+@mixin setFont($name, $value) {
+  $preset: map-get($fonts, $name);
+  @if ($preset) {
+    @if type-of($preset) == 'map' {
+      --#{$namespace}-f-#{$name}: #{map-get($preset, default)};
+      @supports (font-variation-settings: normal) {
+        --#{$namespace}-f-#{$name}: #{map-get($preset, variable)};
+      }
+    } @else {
+      --#{$namespace}-f-#{$name}: #{$preset};
+    }
+  } @else {
+    --#{$namespace}-f-#{$name}: #{var(--#{$namespace}-f-#{$value})};
+  }
+};
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@mixin dynamicViewportSize(
+  $sizeFloor: 24px, 
+  $sizeCeiling: 48px, 
+  $vhFactor: 0,
+  $widthFloor: getBreakpointValue(sm,md), 
+  $widthCeiling: getBreakpointValue(lg,ml),
+  $property: 'font-size', 
+) {
+  $widthRange: $widthCeiling - $widthFloor;
+  $sizeRange: $sizeCeiling - $sizeFloor;
+  $ratio: strip-unit($sizeRange) / strip-unit($widthRange);
+  @media (max-width: $widthFloor + px) {
+    @if $vhFactor == 0 {
+      #{$property}: $sizeFloor;
+    } @else {
+      #{$property}: calc(#{$sizeFloor} + #{$vhFactor + vh});
+    }
+  }
+  @media (min-width: $widthFloor + px) and (max-width: $widthCeiling + px) {
+    @if $vhFactor == 0 {
+      #{$property}: ($sizeFloor + $sizeCeiling) / 2;
+      #{$property}: calc(((100vw - #{$widthFloor + px}) * #{$ratio}) + #{$sizeFloor});
+    } @else {
+      #{$property}: calc(#{($sizeFloor + $sizeCeiling) / 2} + #{$vhFactor + vh});
+      #{$property}: calc(((100vw - #{$widthFloor + px}) * #{$ratio}) + #{$sizeFloor} + #{$vhFactor + vh});
+    }
+  }
+  @media (min-width: $widthCeiling + px) {
+    @if $vhFactor == 0 {
+      #{$property}: $sizeCeiling;
+    } @else {
+      #{$property}: calc(#{$sizeCeiling} + #{$vhFactor + vh});
+    }
+  }
+}

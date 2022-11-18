@@ -1,0 +1,24 @@
+:root {
+  --gap:6px; // intentionally left with no space between --gap:6px;
+}
+
+.container {
+  max-width: getBreakpoint(lg, lg);
+  // max-width: getBreakpoint(lg, lg); // 1440px; // check media.scss
+  // max-width: getBreakpoint(lg, lg);
+  // max-width: getBreakpoint(xl,md);
+  margin-left: auto;
+  margin-right: auto;
+  .page-section & {
+    // padding-left: size(lg, 2);
+    // padding-right: size(lg, 2);
+    // @media #{$tablet} {
+    //   padding-left: size(xl);
+    //   padding-right: size(xl);
+    // }
+  }
+}
+
+.page-section {
+  @extend %widthLimiter;
+}

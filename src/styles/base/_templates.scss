@@ -1,0 +1,80 @@
+%standardPadding {
+  padding: size(md);
+  .no-css-var & {
+    padding: 1em;
+    @media #{$tablet} {
+      padding: 1.25em;
+    }
+  }
+}
+%backdropContainer {
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    [class*=backdrop] {
+      opacity: .7;
+      // transition-duration: .2s;
+      transform: scale(1.1) translateZ(0);
+    }
+  }
+}
+%backdropLayer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: .5;
+  transform: translateZ(0);
+  transition: .62s cubic-bezier(.38,0,0,1);
+}
+
+
+%hideScrollbars {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  // IE 10+
+  ::-webkit-scrollbar,
+  &::-webkit-scrollbar { 
+    display: none;
+    background: transparent;
+    visibility: hidden;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  ::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-track {
+    display: none;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb { 
+    display: none;
+    background: transparent;
+  }
+}
+
+%highlightMenuItem {
+  color: color(gold);
+  // font-style: italic;
+  &:after {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 66 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M65.8014 13.5249C65.8254 13.364 65.7278 13.2098 65.5725 13.1613C61.2199 11.8002 57.3319 9.76118 54.3502 7.44034C51.4176 5.15777 49.3884 2.6241 48.6274 0.219133C48.5773 0.0608002 48.4123 -0.0331994 48.2522 0.0108707C48.0921 0.0549407 47.9975 0.220473 48.0472 0.378937C48.8547 2.95428 50.9926 5.58905 53.9808 7.91493C55.3509 8.98134 56.9055 9.98737 58.6036 10.8972C59.593 11.4274 59.2282 13.2318 58.1057 13.2318L0.601398 13.2318C0.269255 13.2318 0 13.501 0 13.8332C5.26702e-07 13.8783 0.0365929 13.9149 0.0817318 13.9149L58.1057 13.9149C59.2282 13.9149 59.593 15.7193 58.6036 16.2495C56.9055 17.1593 55.3509 18.1654 53.9808 19.2318C50.9926 21.5577 48.8547 24.1924 48.0472 26.7678C47.9975 26.9262 48.0921 27.0918 48.2522 27.1358C48.4123 27.1799 48.5773 27.0859 48.6274 26.9276C49.3884 24.5226 51.4176 21.9889 54.3502 19.7064C57.3319 17.3855 61.2199 15.3465 65.5725 13.9854C65.7278 13.9369 65.8254 13.7827 65.8014 13.6218C65.7966 13.5897 65.7966 13.557 65.8014 13.5249Z' fill='%23AF672B'/%3E%3C/svg%3E%0A");
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .5em;
+    width: 2em;
+    height: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: .1s;
+  }
+  &:hover {
+    &:after {
+      transform: translateX(.3em);
+    }
+  }
+}

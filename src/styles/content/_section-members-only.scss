@@ -1,0 +1,26 @@
+.section-members-only {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.members-only__dialog {
+  box-shadow: 0px 0px 4.8rem color('navy', .25);
+  padding: 1.6rem;
+  background-color: white;
+  color: color('navy');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    height: 24px;
+  }
+  > * {
+    + * {
+      margin-top: 1.6rem;
+    }
+  }
+}

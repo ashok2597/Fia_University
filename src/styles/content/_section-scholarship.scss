@@ -1,0 +1,35 @@
+.section-scholarship {
+  .container {
+    padding: 4.8rem;
+    background: color('light');
+  }
+  .swiper-slide {
+    flex-direction: row-reverse;
+    padding-right: 0;
+    padding-left: 0;
+    figure {
+      flex: 0 0 50%;
+      &:after {
+        padding-bottom: 100%;
+      }
+    }
+    article {
+      flex: 0 0 50%;
+    }
+  }
+  .banner__content {
+    img {
+      height: 3.2rem;
+      width: auto;
+    }
+    padding-right: 0;
+    padding-left: 3.2rem;
+    h2 {
+      font-weight: 400;
+      strong {
+        font-weight: 400;
+        color: color('pink');
+      }
+    }
+  }
+}

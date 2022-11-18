@@ -1,0 +1,36 @@
+// .u-hidden {
+//   display: none !important;
+//   visibility: hidden !important;
+// }
+// .u-upto-tablet {
+//   @media #{$tablet} {
+//     display: none !important;
+//   }
+// }
+// .u-from-tablet {
+//   @media #{$upto-tablet} {
+//     display: none !important;
+//   }
+// }
+// .u-font-monospace {
+//   font-family: font(monospace);
+// }
+// .u-font-capitalize {
+//   text-transform: capitalize;
+// }
+// .u-font-uppercase {
+//   text-transform: uppercase;
+// }
+// .u-no-print {
+//   @media print {
+//     display: none !important;
+//   }
+// }
+// .u-tablet-hidden {
+//   @media #{$only-tablet} {
+//     display: none !important;
+//   }
+// }
+// [dir=rtl] .u-rtl-flip {
+//   transform: scaleX(-1);
+// }
