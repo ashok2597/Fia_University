@@ -31,7 +31,7 @@
             <?php $secondary_button_link = ""; ?>
             <?php $secondary_button_label = ""; ?>
             <div class="swiper-slide">
-              <?php include get_template_directory() . '/partials/figure-banner.php'; ?>
+            <?php include get_template_directory() . '/partials/figure-banner.php'; ?>
             </div>
       
           <?php endforeach; ?>
@@ -50,7 +50,7 @@
     // Optional parameters
     // direction: 'vertical',
     // modules: [EffectFade],
-    speed: 650,
+    speed: 1000,
     effect: 'fade',
     fadeEffect: {
       crossFade: true

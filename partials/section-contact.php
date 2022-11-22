@@ -14,7 +14,7 @@
     <div>
       <p>"Supporting new and worthwhile project ideas <br>that can generate lasting benefit for the FIA and its global community"</p>
 
-      <a class="button white" href="mailto:info@fia.university.com">Send an email to Prof. David Hassan</a>
+      <a class="button white" href="mailto:info@fia.university">Send an email to Prof. David Hassan</a>
 
     </div>
   </article>

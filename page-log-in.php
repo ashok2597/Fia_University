@@ -13,9 +13,13 @@
 
 <?php $about_page_repeater = get_field('about_page_repeater'); ?>
 
-<main class="page-main">
+<main class="page-main page page-log-in">
   <section class="page-section section-content">
     <div class="container">
+
+      <?php $heading = "Log in"; ?>
+      <?php $subheading = "Enter your credentials"; ?>
+      <?php include get_template_directory() . '/partials/section-header.php'; ?>
 
       <div class="section-content__container">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>

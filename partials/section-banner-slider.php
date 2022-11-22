@@ -35,7 +35,7 @@
     // Optional parameters
     // direction: 'vertical',
     // modules: [EffectFade],
-    speed: 650,
+    speed: 1000,
     effect: 'fade',
     fadeEffect: {
       crossFade: true

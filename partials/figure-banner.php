@@ -11,9 +11,6 @@
     <p class="caption banner__caption"><?php echo $caption; ?></p>
     <?php if($content): ?>
       <?php echo $content; ?>
-    <?php //else: ?>
-      <!-- <h1><?php echo $title;?></h1> -->
-      <?php //echo $content; ?>
     <?php endif; ?>
 
     <?php if($link && $button_label): ?>
