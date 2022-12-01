@@ -1,40 +1,29 @@
 <?php get_header(); ?>  
 
-<?php $image = get_the_post_thumbnail_url();?>
-<?php $title = get_the_title(); ?>
-<?php $content = ''; ?>
-<?php //$link = "/" . $post->slug; ?>
-<?php $link = ""; ?>
-<?php $button_label = ""; ?>
-<?php $secondary_button_link = ""; ?>
-  <?php $secondary_button_label = ""; ?>
+<main class="single__main single-research__main">
 
-<?php include get_template_directory() . '/partials/section-banner-header.php'; ?>
-
-<?php $about_page_repeater = get_field('about_page_repeater'); ?>
-
-<main class="page-main single single-research">
-  <section class="page-section section-content section-content__single">
+  <?php $heading = "Research"; ?>
+  <?php $subheading = "All about FIA Research"; ?>
+  <?php include get_template_directory() . '/partials/section-banner-header.php'; ?>
+  
+  <section class="page-section section-content">
     <div class="container">
-
-    <?php //include get_template_directory() . '/partials/section-banner-header.php'; ?>
 
       <div class="section-content__container">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-        <!-- <h1><?php //the_title(); ?></h1> -->
-        <?php the_content(); ?>
-        <a href="https://www.cranfield.ac.uk" class="button">Apply now</a>
+          <?php the_content(); ?>
+          <a href="/contact" class="button">Express interest</a>
         <?php endwhile; else : ?>
           <p><?php esc_html_e( 'Sorry, nothing found.' ); ?></p>
         <?php endif; ?>
-      </div>  
+      </div>
 
       <aside class="section-content__aside">
         <article>
           <figure style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/scholarship.jpg')"></figure>
           <figcaption>
             <p>Apply for the FIA scholarship for the MSc in Advanced Motorsport Engineering at Cranfield, a leading UK university, and join the world's motorsport engineering family</p>
-            <a href="https://www.cranfield.ac.uk" class="button">Apply now</a>
+            <a href="/wp-content/uploads/2022/11/FIAxCranfieldUniversity-english.pdf" class="button">Download brochure</a>
           </figcaption>
         </article>
       </aside>
@@ -99,19 +88,6 @@
     </div>
   </section>
 
-  <?php $cta_banner = get_field('cta_banner'); ?>
-  <?php if($cta_banner): ?>
-    <?php $image = $cta_banner['image'];?>
-    <?php $content = $cta_banner['content']; ?>
-    <?php $link = $cta_banner['link']; ?>
-    <?php $button_label = $cta_banner['button_label']; ?>
-    <?php $secondary_button_link = ""; ?>
-  <?php $secondary_button_label = ""; ?>
-      <?php if($cta_banner['is_visible']): ?>
-        <?php include get_template_directory() . '/partials/section-banner-cta.php'; ?>
-      <?php endif; ?>
-  <?php endif; ?>
 </main>
-
 
 <?php get_footer(); ?>

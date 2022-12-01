@@ -1,7 +1,6 @@
 @import 'nav';
 @import 'footer';
 
-// @import 'front-page';
 @import 'section-banner-slider';
 @import 'section-about';
 @import 'section-programmes';
@@ -14,29 +13,8 @@
 
 
 @import 'single-research';
+@import 'section-banner-header';
 
-@import 'section-content';
-// // @import 'section-banner-header'; // Empty file
+@import 'page';
 
-// @import 'section-content';
-
-// @import 'section-cta-boxes';
-
-// @import 'section-content-image-block';
-
-// @import 'figure-banner';
-
-// @import 'section-gallery-slider';
-
-
-// @import 'single-service';
-
-// @import 'single-team-page';
-
-// @import 'archive-team-page';
-
-// @import 'archive-services-page';
-
-// @import 'single-career-page';
-
-// @import 'forms';
+@import 'forms';

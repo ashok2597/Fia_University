@@ -8,7 +8,7 @@
 
 <article class="banner__content">
   <div>
-    <p class="caption banner__caption"><?php echo $caption; ?></p>
+    <span class="caption banner__caption"><?php echo $caption; ?></span>
     <?php if($content): ?>
       <?php echo $content; ?>
     <?php endif; ?>

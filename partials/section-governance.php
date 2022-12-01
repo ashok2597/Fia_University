@@ -21,7 +21,8 @@
 
       <?php if($governance_team): ?>
 
-      <h3>Board of Directors</h3>
+      <h3>FIA University Board 2022–2025</h3>
+      <p>Elected at the 03 February 2022 WCAMT meeting</p>
 
       <ul class="section-governance__content-list">
         <?php foreach($governance_team as $member): ?>
@@ -33,9 +34,12 @@
               <?php //foreach($member_categories as $member_category): ?>
                 <?php //echo $member_category['name']; ?>
                 <?php //endforeach; ?>
-              <p class="caption banner__caption"><?php echo $member_categories[0]->cat_name; ?></p>
+                <?php if($member_categories): ?>
+                  <p class="caption banner__caption"><?php echo $member_categories[0]->cat_name; ?></p>
+                <?php endif; ?>
               <h4><?php echo get_the_title($member) ?></h4>
-              <p>The FIA has represented the fast-changing worlds of motorsport and mobility</p>
+              <?php echo get_post_field('post_content', $member); ?>
+              <!-- <p>The FIA has represented the fast-changing worlds of motorsport and mobility</p> -->
             </div>
         </li>
         <?php endforeach; ?>
@@ -44,7 +48,7 @@
 
       <?php endif; ?>
 
-      <?php if($governance_team): ?>
+      <!-- <?php if($governance_team): ?>
 
       <h3>Scientific Panel</h3>
 
@@ -67,7 +71,7 @@
 
       </ul>
 
-      <?php endif; ?>
+      <?php endif; ?> -->
 
     </div>
 

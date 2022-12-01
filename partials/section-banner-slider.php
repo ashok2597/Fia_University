@@ -9,7 +9,8 @@
 
           <?php foreach($slider as $slide): ?>
             <?php $image = $slide['image'];?>
-            <?php $image_caption = $slide['image_caption'];?>
+            <?php //$image_caption = $slide['image_caption'];?>
+            <?php $image_caption = "";?>
             <?php $caption = $slide['caption'];?>
             <?php $content = $slide['content']; ?>
             <?php $link = $slide['button_link']; ?>

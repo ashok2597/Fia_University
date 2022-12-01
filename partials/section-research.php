@@ -46,36 +46,36 @@
 </section>
 
 <script>
-  new Swiper('.research-slider', {
-    // Optional parameters
-    // direction: 'vertical',
-    // modules: [EffectFade],
-    speed: 1000,
-    effect: 'fade',
-    fadeEffect: {
-      crossFade: true
-    },
-    loop: true,
-    autoplay: {
-      // delay: 5000,
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+  // new Swiper('.research-slider', {
+  //   // Optional parameters
+  //   // direction: 'vertical',
+  //   // modules: [EffectFade],
+  //   speed: 1000,
+  //   effect: 'fade',
+  //   fadeEffect: {
+  //     crossFade: true
+  //   },
+  //   loop: true,
+  //   autoplay: {
+  //     // delay: 5000,
+  //     delay: 2500,
+  //     disableOnInteraction: false,
+  //   },
   
-    // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
+  //   // If we need pagination
+  //   // pagination: {
+  //   //   el: '.swiper-pagination',
+  //   // },
   
-    // Navigation arrows
-    // navigation: {
-    //   nextEl: '.swiper-button-next',
-    //   prevEl: '.swiper-button-prev',
-    // },
+  //   // Navigation arrows
+  //   // navigation: {
+  //   //   nextEl: '.swiper-button-next',
+  //   //   prevEl: '.swiper-button-prev',
+  //   // },
   
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
-  });
+  //   // And if we need scrollbar
+  //   // scrollbar: {
+  //   //   el: '.swiper-scrollbar',
+  //   // },
+  // });
 </script>

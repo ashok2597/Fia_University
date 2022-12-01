@@ -2,7 +2,7 @@
   <div class="container">
 
   <?php $heading = "Contact"; ?>
-  <?php $subheading = "Get in touch with Professor David Hassan by email"; ?>
+  <?php $subheading = "Get in touch with Professor David Hassan"; ?>
   <?php include get_template_directory() . '/partials/section-header.php'; ?>
 
   <div class="section-contact__content">
@@ -12,9 +12,9 @@
 
   <article class="">
     <div>
-      <p>"Supporting new and worthwhile project ideas <br>that can generate lasting benefit for the FIA and its global community"</p>
+      <p>"Collaborating with the FIA, the world’s leading authority on motorsport and mobility, presents tremendous opportunities for global researchers from leading academic institutions"</p>
 
-      <a class="button white" href="mailto:info@fia.university">Send an email to Prof. David Hassan</a>
+      <a class="button white" href="/contact">Get in touch</a>
 
     </div>
   </article>

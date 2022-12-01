@@ -3,13 +3,20 @@
   top: 0;
   top: var(--wp-admin-bar-height);
   box-shadow: 0px 0px 1.2rem color('navy', 0);
-  transition: all .75s;
+  transition: all .25s;
   padding-top: 2.4rem;
 
   .scrolled & {
+    padding-top: 0;
+    transition: all .25s;
     .site-nav__content {
       box-shadow: 0px 0px 4.8rem color('navy', .25);
-      transition: all .75s;
+      transition: all .25s;
+      padding: 1.6rem 3.2rem;
+    }
+    .container {
+      transition: all .25s;
+      padding: 0;
     }
   }
 

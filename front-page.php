@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="front-page-main">
+<main class="front-page__main">
   
   <?php get_template_part('partials/section-banner-slider'); ?>
   <?php get_template_part('partials/section-about'); ?>

@@ -2,12 +2,40 @@
 .section-content {
 // .section-content-referral,
 // .section-content-contact {
+  form {
+    padding: .8rem;
+    background-color: color('navy');
+    input {
+      padding: .8rem;
+      // font-size: 1.6rem;
+      border-radius: 0;
+    }
+    input[type=submit] {
+      background-color: color('pink');
+      color: white;
+      // border-bottom-color: white;
+    }
+    .login-remember {
+      align-items: center;
+      color: color('white', .5);
+    }
+  }
   form.wpcf7-form {
     p {
-      &:first-of-type {
-        font-size: unset;
+      label {
+        color: color('white', .5);
       }
     }
+    > * {
+      + * {
+        margin-top: 1.6rem;
+      }
+    }
+    // p {
+    //   &:first-of-type {
+    //     font-size: unset;
+    //   }
+    // }
     h3 {
       margin-top: 2em;
       font-weight: 600;
@@ -15,10 +43,10 @@
         margin-top: 0;
       }
     }
-    margin-top: 4rem;
-    [data-page=referrals] & {
-      margin-top: 0;
-    }
+    // margin-top: 4rem;
+    // [data-page=referrals] & {
+    //   margin-top: 0;
+    // }
     width: 100%;
     // label {
     //   font-size: 1.6rem;
