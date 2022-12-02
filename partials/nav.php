@@ -17,6 +17,12 @@
         ) );
     ?>
 
+    <button id="nav-hamburger" class="nav-hamburger" aria-label="Mobile Nav Menu Toggle">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <use xlink:href="#base-icon-menu"></use>
+      </svg>
+    </button>
+
     <?php get_template_part('partials/social-icons'); ?>
   </div>
 

@@ -43,7 +43,25 @@
   }
 }
 
+.nav-hamburger {
+  display: none;
+  @media #{$only-phone} {
+    display: block;
+  }
+}
+
+// Nav bar hamburger clicked
+.menu-open {
+  
+}
+
 .menu {
+  @media #{$only-phone} {
+    display: none;
+    .menu-open & {
+      display: block;
+    }
+  }
   text-transform: uppercase;
   font-family: font('condensed');
   // font-size: 1.6rem;

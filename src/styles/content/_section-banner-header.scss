@@ -77,6 +77,9 @@
     font-family: font('sans');
     font-weight: 500;
     font-size: 5.4rem;
+    @media #{$only-phone} {
+      font-size: 3.2rem;
+    }
   }
 
 }

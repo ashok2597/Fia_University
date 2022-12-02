@@ -16,6 +16,8 @@ export const NavController = {
     })
   },
 
+  
+
   menuIsMobileMode() {
     return window.innerWidth < 1024;
   },  

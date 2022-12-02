@@ -2,8 +2,16 @@
   .container {
     padding: 4.8rem;
     background: color('light');
+    @media #{$only-phone} {
+      padding: 4.8rem 2.4rem;
+    }
   }
   .swiper-slide {
+    @media #{$only-phone} {
+      // flex-direction: column-reverse;
+      flex-direction: column;
+      padding-top: 2.4rem;
+    }
     flex-direction: row-reverse;
     padding-right: 0;
     padding-left: 0;
@@ -24,6 +32,9 @@
     }
     padding-right: 0;
     padding-left: 3.2rem;
+    @media #{$only-phone} {
+      padding-left: 0;
+    }
     h2 {
       font-weight: 400;
       strong {

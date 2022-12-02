@@ -3,17 +3,31 @@
 
   &.section-banner-slider {
     .container {
-      padding-top: var(--nav-height);
+      padding-top: calc(var(--nav-height) + 2.4rem);
+      // padding-top: var(--nav-height);
       padding-left: 2.4rem;
       padding-right: 2.4rem;
+      padding-bottom: 2.4rem;
       background: linear-gradient( 105deg, transparent 50%, color('navy') 50%);
+      @media #{$only-phone} {
+        padding: calc(var(--nav-height) + 4.8rem) 2.4rem 4.8rem;
+      }
     }
   }
 
+  .swiper {
+    overflow: visible;
+  }
   .swiper-slide {
+    @media #{$only-phone} {
+      padding: 0;
+    }
     padding: 4.8rem 2.4rem;
     display: flex;
     align-items: center;
+    @media #{$only-phone} {
+      flex-direction: column;
+    }
   }
 
   .banner__figure {
@@ -51,6 +65,10 @@
   }
 
   .banner__content {
+    @media #{$only-phone} {
+      padding-right: 0;
+      padding-bottom: 2.4rem;
+    }
     padding-right: 3.2rem ;
     order: -1;
     flex: 0 0 40%;
@@ -65,6 +83,9 @@
     }
     h1 {
       font-family: font('ui');
+      @media #{$only-phone} {
+        font-size: 3.2rem;
+      }
     }
   }
 

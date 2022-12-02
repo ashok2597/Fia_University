@@ -8,6 +8,12 @@
         <line x1="3" x2="21" y1="19" y2="19" stroke="currentColor" stroke-width="1"/>
       </symbol>
 
+      <symbol id="base-icon-menu" viewBox="0 0 24 24" fill="none">
+          <line x1="2" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="1.5" />
+          <line x1="2" y1="12" x2="16" y2="12" stroke="currentColor" stroke-width="1.5" />
+          <line x1="2" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="1.5" />
+      </symbol>
+
       <symbol id="icon-plus" width="24" height="25" viewBox="0 0 24 25" fill="none">
         <path d="M2 12.5H22M12 2.5V22.5" stroke="black" stroke-width="2"/>
       </symbol>

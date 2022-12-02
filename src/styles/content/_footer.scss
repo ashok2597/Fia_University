@@ -4,6 +4,10 @@ background-color: color('light');
 // color: white;
 
   .container {
+    @media #{$only-phone} {
+      flex-direction: column;
+      align-items: center;
+    }
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -11,10 +15,10 @@ background-color: color('light');
     align-items: flex-start;
 
     font-size: 1.6rem;
-    > p {
-      flex: 0 0 auto;
-      align-self: flex-end;
-    }
+    // > p {
+    //   // flex: 0 0 auto;
+    //   // align-self: flex-end;
+    // }
 
     .footer__logo {
       flex: 1 1 50%;
@@ -31,6 +35,9 @@ background-color: color('light');
   }
 
   .footer__menu {
+    @media #{$only-phone} {
+      align-items: center;
+    }
 
       margin: 0;
       padding: 0;
@@ -43,5 +50,15 @@ background-color: color('light');
         background-color: white;
       }
     }
+  }
+}
+
+.footer__credits {
+  @media #{$only-phone} {
+    order: 3;
+  }
+  flex: 0 0 auto;
+  @media #{$tablet} {
+    align-self: flex-end;
   }
 }

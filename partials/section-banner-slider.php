@@ -42,11 +42,11 @@
       crossFade: true
     },
     loop: true,
-    autoplay: {
-      // delay: 5000,
-      delay: 2500,
-      disableOnInteraction: false,
-    },
+    // autoplay: {
+    //   // delay: 5000,
+    //   delay: 2500,
+    //   disableOnInteraction: false,
+    // },
   
     // If we need pagination
     // pagination: {

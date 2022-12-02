@@ -3,8 +3,12 @@
     background-color: color('navy');
     color: white;
     padding: 4.8rem;
+    @media #{$only-phone} {
+      padding: 4.8rem 2.4rem;
+    }
   }
   .section-governance__content {
+    overflow: visible;
     > * {
       margin-top: 1em;
       // + * {
@@ -21,6 +25,14 @@
   }
 
   .section-governance__content-list {
+    @media #{$only-phone} {
+      // flex-direction: column;
+      margin-left: -2.4rem;
+      margin-right: -2.4rem;
+      padding-right: 2.4rem;
+      padding-left: 2.4rem;
+      overflow-x: scroll;
+    }
     position: relative;
     margin: 0;
     margin-top: 2.4rem;
@@ -28,6 +40,9 @@
     list-style: none;
     display: flex;
     li {
+      @media #{$only-phone} {
+        flex: 0 0 50%;
+      }
       position: relative;
       // opacity: .5;
       display: flex;
@@ -76,6 +91,9 @@
       font-family: font('ui');
       font-weight: 500;
       font-size: 3.2rem;
+      @media #{$only-phone} {
+        font-size: 2.4rem;
+      }
     }
     // figure {
     //   width: 100%;

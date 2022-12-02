@@ -3,6 +3,9 @@
     background-color: color('navy');
     color: white;
     padding: 4.8rem;
+    @media #{$only-phone} {
+      padding: 2.4rem;
+    }
   }
   // .section-header {
   //   .toggle {
@@ -26,6 +29,9 @@
   // }
 
   .section-programmes__content {
+    @media #{$only-phone} {
+      flex-direction: column;
+    }
     position: relative;
     
     display: flex;
@@ -46,11 +52,16 @@
     }
 
     li {
-      opacity: 0.25;
-      margin-right: 2.4rem;
       &:last-of-type {
-        margin-right: 0;
+        margin-top: 2.4rem;
       }
+      @media #{$tablet} {
+        margin-right: 2.4rem;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      opacity: 0.25;
       flex: 1 1 33.33%;
       background-color: color('white', .1);
       h3 {

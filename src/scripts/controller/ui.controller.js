@@ -54,7 +54,8 @@ export const UIController = {
     return height;
   },
   recordNavBarHeight() {
-    const el = document.querySelector('.nav');
+    // const el = document.querySelector('.nav');
+    const el = document.querySelector('.site-nav');
     // const el = document.querySelector('.section-nav');
     const height = el ? el.clientHeight : 0;
     setCSSCustomProperty('--nav-height', height + 'px');
