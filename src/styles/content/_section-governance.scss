@@ -25,44 +25,59 @@
   }
 
   .section-governance__content-list {
-    @media #{$only-phone} {
+    // @media #{$only-phone} {
       // flex-direction: column;
-      margin-left: -2.4rem;
-      margin-right: -2.4rem;
-      padding-right: 2.4rem;
-      padding-left: 2.4rem;
-      overflow-x: scroll;
-    }
-    position: relative;
-    margin: 0;
-    margin-top: 2.4rem;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    li {
-      @media #{$only-phone} {
-        flex: 0 0 50%;
-      }
+      // margin-left: -2.4rem;
+      // margin-right: -2.4rem;
+      // padding-right: 2.4rem;
+      // padding-left: 2.4rem;
+      // overflow-x: scroll;
+      margin-bottom:-1.2rem;
+      flex-wrap: wrap;
       position: relative;
-      // opacity: .5;
+      margin: 0;
+      margin-top: 2.4rem;
+      padding: 0;
+      list-style: none;
       display: flex;
-      width: 100%;
-      &:after {
-        content: "";
-        display: block;
-        padding-bottom: 100%;
+    // }
+    @media #{$tablet} {
+      margin-bottom:-1.2rem;
+    }
+    @media #{$desktop} {
+      flex-wrap: nowrap;
+    }
+    li {
+      // @media #{$only-phone} {
+        flex: 0 1 50%;
+        margin-right: 0;
+        padding-right: 1.2rem;
+        padding-bottom: 1.2rem;
+        position: relative;
+        // opacity: .5;
+        display: flex;
+        width: 100%;
+      // }
+      @media #{$tablet} {
+        flex: 0 1 33.33%;
+        padding-right: 1.2rem;
+        padding-bottom: 1.2rem;
       }
+      @media #{$desktop} {
+        flex: 1 1 auto;
+      }
+      
       > div {
+        width: 100%;
         padding: 1.6rem;
         padding-right: 3.2rem;
         background: color('white', .10);
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
         > * {
           + * {
             margin-top: 1.6rem;
@@ -73,10 +88,24 @@
         flex-direction: column;
         justify-content: space-between;
       }
-      margin-right: 2.4rem;
-      &:last-of-type {
-        margin-right: 0;
-      }
+      // margin-right: 2.4rem;
+      // &:last-of-type {
+      //   margin-right: 0;
+      // }
+    }
+
+    .governance__content-list-item-wrapper {
+      padding: 1.6rem;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
     .caption {
       background: white;

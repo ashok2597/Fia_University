@@ -23,7 +23,22 @@
       content: "";
       // padding-bottom: 56.25%; // 16:9
       // padding-bottom: 42.86%; // 21:9
-      padding-bottom: 33%; // 21:9
+      
+      // @media #{$only-phone} {
+        padding-bottom: 56.25%;
+        padding-bottom: 75%;
+      // }
+      @media #{$tablet} {
+        padding-bottom: 56.25%;
+      }
+      @media #{$desktop} {
+        padding-bottom: 33%;
+      }
+      .single-research__main & {
+        @media #{$only-phone} {
+          padding-bottom: 100%;
+        }
+      }
     }
 
     .section-header {
@@ -35,6 +50,9 @@
       h2 {
         color: white;
       }
+      @media #{$only-phone} {
+        margin-left: 2.4rem;
+      }
     }
 
     .banner-header__title {
@@ -42,6 +60,9 @@
       color: white;
       margin-left: 4.8rem;
       margin-bottom: 4.8rem;
+      @media #{$only-phone} {
+        margin-left: 2.4rem;
+      }
       position: absolute;
       bottom: 0;
       left: 0;
@@ -71,6 +92,10 @@
     text-transform: uppercase;
     color: color('yellow');
     margin: 0;
+  }
+
+  div {
+    margin-left: 0.8rem;
   }
   
   h2 {

@@ -9,7 +9,7 @@
       padding-right: 2.4rem;
       padding-bottom: 2.4rem;
       background: linear-gradient( 105deg, transparent 50%, color('navy') 50%);
-      @media #{$only-phone} {
+      @media #{$upto-desktop} {
         padding: calc(var(--nav-height) + 4.8rem) 2.4rem 4.8rem;
       }
     }
@@ -19,13 +19,13 @@
     overflow: visible;
   }
   .swiper-slide {
-    @media #{$only-phone} {
+    @media #{$upto-desktop} {
       padding: 0;
     }
     padding: 4.8rem 2.4rem;
     display: flex;
     align-items: center;
-    @media #{$only-phone} {
+    @media #{$upto-desktop} {
       flex-direction: column;
     }
   }
@@ -65,7 +65,7 @@
   }
 
   .banner__content {
-    @media #{$only-phone} {
+    @media #{$upto-desktop} {
       padding-right: 0;
       padding-bottom: 2.4rem;
     }

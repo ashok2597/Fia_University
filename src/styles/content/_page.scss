@@ -6,6 +6,7 @@
       flex-direction: column;
       background: linear-gradient( 105deg, color('navy') 80%, color('navy', 0) 80%);
 
+
       > * {
         max-width: 66.66%;
         + * {
@@ -20,5 +21,18 @@
       }
     }
     
+  }
+  &.page-contact__main,
+  &.page-log-in__main {
+    .section-content {
+      @media #{$only-phone} {
+        .container {
+          background-color: color('navy');
+          > * {
+            max-width: 100%;
+          }
+        }
+      }
+    }
   }
 }

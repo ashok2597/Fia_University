@@ -34,12 +34,16 @@
               <?php //foreach($member_categories as $member_category): ?>
                 <?php //echo $member_category['name']; ?>
                 <?php //endforeach; ?>
-                <?php if($member_categories): ?>
-                  <p class="caption banner__caption"><?php echo $member_categories[0]->cat_name; ?></p>
-                <?php endif; ?>
-              <h4><?php echo get_the_title($member) ?></h4>
-              <?php echo get_post_field('post_content', $member); ?>
-              <!-- <p>The FIA has represented the fast-changing worlds of motorsport and mobility</p> -->
+                <div class="governance__content-list-item-wrapper">
+                  
+                  <?php if($member_categories): ?>
+                    <p class="caption banner__caption"><?php echo $member_categories[0]->cat_name; ?></p>
+                  <?php endif; ?>
+                <h4><?php echo get_the_title($member) ?></h4>
+                <?php echo get_post_field('post_content', $member); ?>
+                <!-- <p>The FIA has represented the fast-changing worlds of motorsport and mobility</p> -->
+                
+                </div>
             </div>
         </li>
         <?php endforeach; ?>

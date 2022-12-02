@@ -1,6 +1,6 @@
 <?php get_header(); ?>  
 
-<main class="page__main">
+<main class="page__main page-log-in__main">
   <section class="page-section section-content">
     <div class="container">
 

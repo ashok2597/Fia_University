@@ -1,16 +1,18 @@
 .site-nav {
+  position: relative;
   position: fixed;
   top: 0;
   top: var(--wp-admin-bar-height);
-  box-shadow: 0px 0px 1.2rem color('navy', 0);
+  box-shadow: 0px 1.2rem 1.2rem color('navy', 0);
   transition: all .25s;
   padding-top: 2.4rem;
 
-  .scrolled & {
+  .scrolled &, 
+  .menu-open & {
     padding-top: 0;
     transition: all .25s;
     .site-nav__content {
-      box-shadow: 0px 0px 4.8rem color('navy', .25);
+      box-shadow: 0px 1.2rem 1.2rem color('navy', .1);
       transition: all .25s;
       padding: 1.6rem 3.2rem;
     }
@@ -22,6 +24,7 @@
 
   .container {
     padding: 0 2.4rem;
+    position: relative;
   }
 
   .site-nav__content {
@@ -48,11 +51,31 @@
   @media #{$only-phone} {
     display: block;
   }
+  border: none;
+  background: transparent;
+  padding: .8rem;
+  line-height: 0;
+  &:hover, &:focus {
+    background-color: color('light');
+  }
 }
 
 // Nav bar hamburger clicked
 .menu-open {
-  
+  .nav__menu {
+    box-shadow: 0px 1.2rem 1.2rem color('navy', .1);
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0; 
+    > li {
+      padding-left: 2.4rem;
+      a {
+        font-size: 2.4rem;
+      }
+    }
+  }
 }
 
 .menu {

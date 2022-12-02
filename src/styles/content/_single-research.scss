@@ -72,11 +72,18 @@
   > .container {
     display: flex;
     padding: 4.8rem;
+    @media #{$only-phone} {
+      padding: 4.8rem 2.4rem;
+      flex-direction: column;
+    }
   }
   
   .section-content__container {
     flex: 1 1 75%;
     margin-right: 4.8rem;
+    @media #{$only-phone} {
+      margin-right: 0;
+    }
     // color: white;
     > * {
       + * {

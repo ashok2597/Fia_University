@@ -4,7 +4,7 @@
     color: white;
     padding: 4.8rem;
     @media #{$only-phone} {
-      padding: 2.4rem;
+      padding: 4.8rem 2.4rem;
     }
   }
   // .section-header {
@@ -31,6 +31,7 @@
   .section-programmes__content {
     @media #{$only-phone} {
       flex-direction: column;
+      margin-top: 2.4rem;
     }
     position: relative;
     
