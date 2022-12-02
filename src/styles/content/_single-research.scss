@@ -122,6 +122,11 @@
   }
   
   .section-content__aside {
+    .single-research__main & {
+      @media #{$only-phone} {
+        margin-top: 4.8rem;
+      }
+    }
     article {
       background-color: white;
       padding: 1.6rem;
