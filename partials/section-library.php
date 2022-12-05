@@ -19,7 +19,7 @@
     </div>
 
     <div class="section-library__content">
-      <figure class="" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/e-library.jpg');"></figure>
+      <figure class="" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/elibrary.jpeg');"></figure>
       <figcaption>
         <p>The creation of an E-Library is another key aspect of the modern FIA University. Aside from making available purposively curated reading and reference lists for the benefit of our members, the Federation’s investment in its Archives is also a central objective.
         </p>
