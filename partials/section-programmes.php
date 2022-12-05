@@ -34,7 +34,7 @@
         <figcaption>
           <p class="caption banner__caption">ESADE Business School, Spain</p>
           <h3>FIA EMERGING LEADERS PROGRAMME</h3>
-          <p>Available annually, Sp</p>
+          <p>Available annually, Spring</p>
           <p>Developing the next generation of global leaders is a key priority of the FIA University and its collaboration with Esade, recently ranked by the Financial Times newspaper as amongst the Top 5 Business Schools for Executive Education in the world, is central to achieving this. The formation of Communities of Practice, in which key personnel share ideas and adopt innovative solutions to stubborn challenges, is just one outcome of a profitable and affirming experience for members from many parts of the world who participate in this annual programme.</p>
         </figcaption>
       </li>

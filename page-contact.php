@@ -5,7 +5,7 @@
     <div class="container">
 
       <?php $heading = "Contact"; ?>
-      <?php $subheading = "Get in touch with Professor David Hassan"; ?>
+      <?php $subheading = "Get in touch with our team"; ?>
       <?php include get_template_directory() . '/partials/section-header.php'; ?>
 
       <div class="section-content__container">

@@ -2,19 +2,21 @@
   <div class="container">
 
   <?php $heading = "Contact"; ?>
-  <?php $subheading = "Get in touch with Professor David Hassan"; ?>
+  <?php $subheading = "Get in touch"; ?>
   <?php include get_template_directory() . '/partials/section-header.php'; ?>
 
   <div class="section-contact__content">
     
-  <figure class="contacrt__figure" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/professor-david-hassan.jpg')">
+  <figure class="contact__figure" style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/professor-david-hassan.jpg')">
   </figure>
 
   <article class="">
     <div>
-      <p>"Collaborating with the FIA, the world’s leading authority on motorsport and mobility, presents tremendous opportunities for global researchers from leading academic institutions"</p>
+      <p>According to Professor David Hassan:</p>
 
-      <a class="button white" href="/contact">Get in touch</a>
+      <blockquote>"Collaborating with the FIA, the world’s leading authority on motorsport and mobility,<wbr> presents tremendous opportunities for global researchers from leading academic institutions"</blockquote>
+
+      <a class="button white" href="/contact">Get in touch with Our team</a>
 
     </div>
   </article>
