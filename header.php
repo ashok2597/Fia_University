@@ -29,6 +29,15 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C56C5C7HDW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C56C5C7HDW');
+  </script>
+
   <!-- <link rel='https://api.w.org/' href='<?php //echo get_site_url(); ?>/wp-json/' /> -->
 
   <!-- Tenon font -->
