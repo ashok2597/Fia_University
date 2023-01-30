@@ -44,9 +44,10 @@
     @media #{$tablet} {
       margin-bottom:-1.2rem;
     }
-    @media #{$desktop} {
-      flex-wrap: nowrap;
-    }
+    // @media #{$desktop} {
+    //   flex-wrap: nowrap;
+    //   overflow: scroll;
+    // }
     li {
       // @media #{$only-phone} {
         flex: 0 1 50%;
@@ -59,13 +60,13 @@
         width: 100%;
       // }
       @media #{$tablet} {
-        flex: 0 1 33.33%;
+        flex: 0 0 33.33%;
         padding-right: 1.2rem;
         padding-bottom: 1.2rem;
       }
-      @media #{$desktop} {
-        flex: 1 1 auto;
-      }
+      // @media #{$desktop} {
+      //   flex: 1 1 auto;
+      // }
       
       > div {
         width: 100%;
