@@ -64,7 +64,7 @@
 
       <?php if($scientific_team): ?>
 
-      <h3>Scientific Panel</h3>
+      <h3>Scientific Advisory Committee</h3>
 
       <ul class="section-governance__content-list">
       <?php foreach($scientific_team as $member): ?>
@@ -82,7 +82,7 @@
                   <p class="caption banner__caption"><?php echo $member_categories[0]->cat_name; ?></p>
                 <?php endif; ?> -->
               <h4><?php echo get_the_title($member) ?></h4>
-              <?php echo get_post_field('post_content', $member); ?>
+              <?php //echo get_post_field('post_content', $member); ?>
               <!-- <p>The FIA has represented the fast-changing worlds of motorsport and mobility</p> -->
               
               </div>
