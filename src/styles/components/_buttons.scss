@@ -1,41 +1,21 @@
 .button {
   font-size: 2.4rem;
-  // font-weight: 600;
-
   font-family: font('condensed');
   font-weight: 400;
-  // padding: .5em 1.5em;
-  // padding: .5em 1em .4em; // bottom slightly less due to typeface
   border: 2px solid transparent;
   padding-bottom: .4rem;
   border-bottom: 2px solid color('pink');
-  // background-color: color('yellow');
   line-height: 1;
   color: color('pink');
-  // color:white;
   white-space: nowrap;
   text-transform: uppercase;
   display: inline-flex;
-  // flex: 0;
-  // width: 100%;
-  // justify-content: start;
-  // width: auto;
-  // justify-content: space-between;
-  // transition: width 1s;
-  // &:hover {
-  //   width: 100%;
-  //   // flex: 1;
-  //   // justify-content: space-between;
-  //   transition: width 1s;
-  // }
-
 
   &:after {
     content: "";
     background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.75 10H13.75M9.25 5L14.25 10L9.25 15' stroke='%23ED2678'/%3E%3C/svg%3E%0A");
     width: 20px;
     height: 20px;
-    // margin-left: 1em;
   }
   &.white {
     &:after {
@@ -45,46 +25,19 @@
       height: 20px;
     }
   }
-  
-  // &:after {
-  //   content: "+";
-  //   margin-left: .5em;
-  // }
   user-select: none;
+
   &:hover, &:focus {
-    // transform: scale(1.05);
-    // width: 100%;
     filter: brightness(1.1);
     transition: all .25s;
   }
-  [data-template=single-services][data-page=emerge] &,
-  [data-template=single-services-emerge] & {
-    background-color: color('pink');
-  }
+
   &.button-secondary {
     background-color: transparent;
     background-color: color('white', .10);
     border: 2px solid;
     &:hover, &:focus {
       background-color: color('white', .25);
-    }
-    [data-template=single-services][data-page=emerge] &,
-    [data-template=single-services-emerge] & {
-      background-color: color('pink', .10);
-      border: 2px solid color('pink');
-      color: color('pink');
-      &:hover, &:focus {
-        background-color: color('pink', .25);
-      }
-    }
-    [data-template=single-careers] &  {
-      background-color: transparent;
-      background-color: color('yellow', .10);
-      border: 2px solid color('yellow');
-      color: color('yellow');
-      &:hover, &:focus {
-        background-color: color('yellow', .25);
-      }
     }
   }
   section.section-content .section-content__container & {

@@ -34,7 +34,12 @@
       @media #{$desktop} {
         padding-bottom: 33%;
       }
-      .single-research__main & {
+      // .single-research__main & {
+      //   @media #{$only-phone} {
+      //     padding-bottom: 100%;
+      //   }
+      // }
+      [data-template=single-research] & {
         @media #{$only-phone} {
           padding-bottom: 100%;
         }

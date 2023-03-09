@@ -1,11 +1,20 @@
-.page__main {
+[data-page=log-in],
+[data-page=contact] {
+
   .section-content {
     background-color: color('light');
+
     .container {
       padding-top: calc(var(--nav-height) + 4.8rem);
       flex-direction: column;
       background: linear-gradient( 105deg, color('navy') 80%, color('navy', 0) 80%);
 
+      @media #{$only-phone} {
+        background-color: color('navy');
+        > * {
+          max-width: 100%;
+        }
+      }
 
       > * {
         max-width: 66.66%;
@@ -15,23 +24,10 @@
       }
 
     }
+    
     .section-header {
       h2 {
         color: white;
-      }
-    }
-    
-  }
-  &.page-contact__main,
-  &.page-log-in__main {
-    .section-content {
-      @media #{$only-phone} {
-        .container {
-          background-color: color('navy');
-          > * {
-            max-width: 100%;
-          }
-        }
       }
     }
   }

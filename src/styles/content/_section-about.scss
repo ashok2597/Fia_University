@@ -6,28 +6,23 @@
     background-color: color('navy');
     color: white;
     padding: 4.8rem;
-    @media #{$only-phone} {
-      padding: 4.8rem 2.4rem;
-    }
-    // padding-top: 6.4rem;
-    // padding-bottom: 6.4rem;
     display: flex;
     align-items: center;
     @media #{$only-phone} {
+      padding: 4.8rem 2.4rem;
       flex-direction: column;
       align-items: flex-start;
     }
   }
 
   .section-about__heading {
+    flex: 0 0 50%;
     @media #{$only-phone} {
       padding-bottom: 2.4rem;
     }
-    flex: 0 0 50%;
     h2 {
       font-family: font('sans');
       font-weight: 500;
-      // font-size: 5.4rem;
     }
     header {
       overflow: hidden;
@@ -50,7 +45,6 @@
   }
 
   .section-about__logos {
-    // margin-top: 3.2rem;
     display: flex;
 
     a {
@@ -63,7 +57,6 @@
       }
       p {
         margin: 0;
-        // font-weight: 500;
       }
     }
   }
@@ -76,27 +69,4 @@
       }
     }
   }
-
-  // Old version
-  // .section-about__content {
-  //   margin: 0;
-  //   padding: 0;
-  //   flex: 0 0 50%;
-  //   list-style: none;
-  //   columns: 2;
-  //   column-gap: 4.8rem;
-  //   h3 {
-  //     font-family: font('ui');
-  //     font-weight: 500;
-  //   }
-  //   p {
-  //     margin: 0;
-  //   }
-  //   li {
-  //     break-inside: avoid;
-  //     &:first-of-type {
-  //       margin-bottom: 2.4rem;
-  //     }
-  //   }
-  // }
 }

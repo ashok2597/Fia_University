@@ -1,93 +1,111 @@
 <?php get_header(); ?>  
 
-<main class="single__main single-research__main">
+<?php $heading = "Articles"; ?>
+<?php $subheading = "FIA University Articles"; ?>
+<?php include get_template_directory() . '/partials/section-banner-header.php'; ?>
 
-  <?php $heading = "Research"; ?>
-  <?php $subheading = "All about FIA Research"; ?>
-  <?php include get_template_directory() . '/partials/section-banner-header.php'; ?>
-  
-  <section class="page-section section-content">
-    <div class="container">
+<section class="page-section section-content">
+  <div class="container">
 
-      <div class="section-content__container">
-        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-          <?php the_content(); ?>
-          <a href="/contact" class="button">Express interest</a>
-        <?php endwhile; else : ?>
-          <p><?php esc_html_e( 'Sorry, nothing found.' ); ?></p>
+    <div class="section-content__container">
+
+      <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+        <?php if(get_field('subtitle')): ?>
+          <p><strong><?php echo get_field('subtitle'); ?></strong></p>
         <?php endif; ?>
-      </div>
 
-      <aside class="section-content__aside">
-        <article>
-          <figure style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/scholarship.jpg')"></figure>
-          <figcaption>
-            <p>Apply for the FIA scholarship for the MSc in Advanced Motorsport Engineering at Cranfield, a leading UK university, and join the world's motorsport engineering family</p>
-            <a href="/wp-content/uploads/2022/11/FIAxCranfieldUniversity-english.pdf" class="button">Download brochure</a>
-          </figcaption>
-        </article>
-      </aside>
-      
-    </div>
-  </section>
+        <?php if(get_the_post_thumbnail_url()): ?>
+            <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+        <?php endif; ?>
 
-  <section class="page-section section-content section-content__more">
-    <div class="container">
-      <h2 class="content__more-title" >See more</h2>
+        <?php the_content(); ?>
 
-      <?php $research_slider = get_posts(array(
-        'posts_per_page' => -1,
-        'post_type' => 'research',
-        'order' => 'DESC',
-        'orderby' => 'menu_order',
-        'post_status' => 'publish',
-        ));
-      ?>
+        <?php if(get_field('file')): ?>
+          <a href="<?php echo get_field('file');?>" class="button">Download</a>
+        <?php endif; ?>
 
-      <?php if($research_slider): ?>
-        <div class="content__more-items">
-          <?php foreach($research_slider as $slide): ?>
-
-            <?php $image = get_the_post_thumbnail_url($slide);?>
-            <?php $image_caption = "";?>
-            <?php $caption = "Research";?>
-            <?php //$title = get_the_title($slide); ?>
-            <?php $content = get_field('homepage_block', $slide); ?>
-            <?php $link = get_the_permalink($slide); ?>
-            <?php $button_label = "Read more"; ?>
-            <?php $secondary_button_link = ""; ?>
-            <?php $secondary_button_label = ""; ?>
-
-            <div class="more__item">
-
-              <figure class="banner__figure" style="background-image: url(<?php echo $image;?>)">
-                <figcaption class="banner__content">
-                  <div>
-                    <p class="caption banner__caption"><?php echo $caption; ?></p>
-                    <?php if($content): ?>
-                      <?php echo $content; ?>
-                    <?php endif; ?>
-
-                    <?php if($link && $button_label): ?>
-                      <!-- <div class="banner__button-wrapper" > -->
-                        <a class="button" href="<?php echo $link; ?>"><?php echo $button_label; ?></a>
-                        <!-- <?php //if($secondary_button_link && $secondary_button_label): ?> -->
-                        <!-- <a class="button button-secondary" href="<?php echo $secondary_button_link; ?>"><?php echo $secondary_button_label; ?></a> -->
-                        <!-- <?php //endif; ?> -->
-                      <!-- </div> -->
-                    <?php endif; ?>
-                  </div>
-                </figcaption>
-              </figure>
-
-            </div>
-          <?php endforeach; ?>
-        </div>
+      <?php endwhile; else : ?>
+        <p><?php esc_html_e( 'Sorry, nothing found.' ); ?></p>
       <?php endif; ?>
 
     </div>
-  </section>
 
-</main>
+    <aside class="section-content__aside">
+      
+      <article class="fixed-card">
+        <figure style="background-image: url('<?php echo get_stylesheet_directory_uri();?>/assets/images/scholarship.jpg')"></figure>
+        <figcaption>
+          <p>Apply for the FIA scholarship for the MSc in Advanced Motorsport Engineering at Cranfield, a leading UK university, and join the world's motorsport engineering family</p>
+          <a href="/wp-content/uploads/2022/11/FIAxCranfieldUniversity-english.pdf" class="button">Download brochure</a>
+        </figcaption>
+      </article>
+
+      <!-- <?php $current_post = $post->ID; ?> -->
+
+        <?php $posts = get_posts(array(
+          'posts_per_page' => 3,
+          'order' => 'DESC',
+          'post_status' => 'publish',
+          'exclude' => $current_post, 
+          ));
+        ?>
+
+        <?php if($posts): ?>
+
+        <section class="section-related-posts">
+          <h2>Related</h2>
+
+          <?php foreach($posts as $post): ?>
+
+          <article class="post-item">
+            <a href="<?php echo get_the_permalink($post);?>">
+            <?php $post_thumbnail = get_the_post_thumbnail_url(); ?>
+            <?php if($post_thumbnail): ?>
+
+              <figure class="post-item__figure" style="background-image: url(<?php echo $post_thumbnail;?>);">
+              </figure>
+              <?php else:?>
+                <figure class="post-item__figure">
+                  <div class="post-item__figure-placeholder">
+                    <svg class="" width="130"  height="25" viewBox="0 0 130 25">
+                      <use xlink:href="#logo-fia-university" />
+                    </svg>
+                  </div>
+                </figure>
+              <?php endif; ?>
+
+              <figcaption class="post-item__content">
+                <?php $post_tags = get_the_tags($post);?>
+                  <?php if($post_tags):?>
+                    <p class="post-item__tags">
+                  
+                      <?php foreach($post_tags as $tag):?>
+                        <?php $home_url = get_home_url() ?>
+                        <!-- <a href="<?php echo $home_url . "/tag/" . $tag->slug;?>" class="post-item__tag"><?php echo $tag->name;?></a> -->
+                        <span class="post-item__tag"><?php echo $tag->name;?></span>
+                      <?php endforeach;?>
+
+                    </p>
+                  <?php endif?>
+
+                <h3 class="post-item__title"><?php echo get_the_title($post);?></h3>
+                <p class="post-item__meta">
+                  <time class="post-item__date" datetime="<?php echo get_the_date('d F Y', $post); ?>"><?php echo get_the_date('d F Y', $post); ?></time>
+                </p>
+                <p>
+                  <span class="button">Read more</span>
+                </p>
+              </figcaption>
+            </a>
+          </article>
+
+        <?php endforeach; ?>
+        </section>
+        <?php endif; ?>
+    </aside>
+    
+  </div>
+</section>
 
 <?php get_footer(); ?>
