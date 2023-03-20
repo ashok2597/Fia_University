@@ -2,6 +2,10 @@
   
 <?php get_template_part('partials/section-banner-slider'); ?>
 <?php get_template_part('partials/section-about'); ?>
+
+<?php get_template_part('partials/section-articles'); ?>
+
+
 <?php get_template_part('partials/section-programmes'); ?>
 <?php get_template_part('partials/section-research'); ?>
 <?php get_template_part('partials/section-scholarship'); ?>

@@ -2,7 +2,25 @@
 
 <?php $heading = "Articles"; ?>
 <?php $subheading = "FIA University Articles"; ?>
-<?php include get_template_directory() . '/partials/section-banner-header.php'; ?>
+<?php //include get_template_directory() . '/partials/section-banner-header.php'; ?>
+
+<section class="page-section section-banner-header">
+  <?php $post_thumbnail = get_the_post_thumbnail_url();?>
+  <?php if(!$post_thumbnail):?>
+  <?php $articles_archive_page = get_page_by_path('/articles');?>
+    <?php $post_thumbnail = get_the_post_thumbnail_url($articles_archive_page); ?>
+    <?php endif; ?>
+  <div class="container" style="background-image: url('<?php echo $post_thumbnail;?>');">
+    
+    <?php if($heading && $subheading): ?>
+    <?php include get_template_directory() . '/partials/section-header.php'; ?>
+    <?php endif; ?>
+
+    <div class="banner-header__title">
+      <h1><?php the_title(); ?></h1>
+    </div>
+  </div>
+</section>
 
 <section class="page-section section-content">
   <div class="container">

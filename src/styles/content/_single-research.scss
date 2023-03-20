@@ -106,8 +106,14 @@
       strong {
         font-weight: 500;
       }
-    }
 
+      > a {
+        color: color('pink');
+        font-weight: 500;
+      }
+  
+    }
+    
     blockquote {
       padding: 1em;
       background-color:color('pink', .1);
